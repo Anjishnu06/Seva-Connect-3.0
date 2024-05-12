@@ -29,22 +29,19 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const steps = [
   {
-    label: "Select campaign settings",
-    description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+    label: "SEVA Connect - ESG Commitment",
+    description: `Sustainability for a Brighter Tomorrow`,
   },
   {
-    label: "Create an ad group",
+    label: "Our Commitment to the Environment",
     description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
+      "Reduced energy consumption by 15% in 2023 through energy-efficient equipment and processes.Increased use of renewable energy sources: 40% of our electricity needs met by solar power in 2024.",
   },
   {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`,
+    label: "Investing in Our People and Communities",
+    description: `Launched a comprehensive wellness program offering mental health resources and fitness initiatives.
+    Achieved gender parity in leadership positions by 2024.
+    Implemented unconscious bias training for all employees.Uphold strict labor standards throughout our supply chain.`,
   },
 ];
 
@@ -102,7 +99,7 @@ const Home = () => {
               variant="h6"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/home"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },

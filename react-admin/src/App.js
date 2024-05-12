@@ -32,7 +32,6 @@ import LoginUser from "./components/auth/login/index";
 import RegisterUser from "./components/auth/register/index";
 import Home from "./components/home/index";
 import Header from "./components/Header";
-import { useRoutes } from "react-router-dom";
 import Project1 from "./components/Project1";
 import Project2 from "./components/Project2";
 

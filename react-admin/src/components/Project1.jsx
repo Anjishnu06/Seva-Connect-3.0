@@ -1,10 +1,41 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+
+const pages = ["Explore Campaigns", "Search  a Campaign", "How It Works"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Project1 = () => {
 
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
     const navigate = useNavigate();
 
     const handleSubmit = ()=>{
@@ -20,12 +51,114 @@ const Project1 = () => {
  
   return (
     <div>
-      <Typography variant="h2">
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              SEVA-Connect
+            </Typography>
+
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
+
+            {/* <Box sx={{ flexGrow: 0 }}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                Sign In As Investor
+              </Button>
+            </Box> */}
+          </Toolbar>
+        </Container>
+      </AppBar>
+
+      <div style={{marginLeft:12,marginRight:13}}>
+      <h2>
         Training for Industrial Production Worker Job role and Basic
         Manufacturing (FoSTaC) for self-help group workers for Britannia
-        foundation, Gwalior
-      </Typography>
-      <br />
+        foundation, Gwalior.
+        </h2>
+      </div>
+      <div style={{marginLeft:12,marginRight:13,marginTop:12}}>
       <Typography variant="h4">
         Experts from FICSI conducted a three-day training program for self-help
         group of rural women at Barai, Gwalior supported by Britannia Nutrition
@@ -42,9 +175,12 @@ const Project1 = () => {
         zeal to learn could be seen in the eyes of all the women. This was a
         small step towards women empowerment.
       </Typography>
+      </div>
       <br />
-      <Button color="success" onClick={openWhatsApp}>Connect with Whatsapp</Button>
+      <div style={{marginLeft:12}}>
+      <Button color="success" onClick={openWhatsApp} style={{backgroundColor:'white'}}>Connect with Whatsapp</Button>
       <Button color="secondary" onClick={handleSubmit}>Check Impact Metrics</Button>
+      </div>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Navbar = () => {
             <h3>Resources</h3>
           </div>
         </Div>
-        <div className='buttons'>
+        <div className='buttons' style={{marginLeft:602}}>
           <button onClick={handleClick} className='btn' id="btn-2">Log In/Sign In</button>
         </div>
         <div className='buttons'>
