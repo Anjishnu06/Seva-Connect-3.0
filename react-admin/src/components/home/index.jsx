@@ -23,6 +23,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Contact from "../Contact";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const pages = ["Explore Campaigns", "Search  a Campaign", "How It Works"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -90,6 +91,7 @@ const Home = () => {
     navigate('/home/project2');
   }
 
+  
   return (
     <div>
       <AppBar position="static">
@@ -99,7 +101,7 @@ const Home = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/home"
+              href="/landing"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -268,7 +270,15 @@ const Home = () => {
       </div>
       <div style={{ marginTop: 10, marginLeft: 37 }}>
         <Typography variant="h2">
-          Ongoing Social Impact Projects <ArrowForwardIcon fontSize="medium" />
+          <span>Ongoing Social Impact Projects <ArrowForwardIcon fontSize="medium" /> <span>
+
+          <Link to="https://recommendation-system-hjal.onrender.com/" target="_blank">
+          <Button size="large" variant="outlined" color="success">
+                AI RECOMMENDATION ✨
+              </Button> 
+            </Link>
+            </span>
+            </span>
         </Typography>
       </div>
       <div
