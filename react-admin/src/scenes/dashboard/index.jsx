@@ -15,6 +15,22 @@ import { Link } from 'react-router-dom';
 import "./dashboard.css"
 
 const Dashboard = () => {
+
+  const handleDownload = () => {
+    // Path to the CSV file
+    const csvFilePath = '/Users/anjishnukumar/Desktop/archive/ESGData.csv';
+
+    // Create a temporary link element
+    const link = document.createElement('a');
+
+    // Set attributes for the link element
+    link.href = csvFilePath;
+    link.download = 'data.csv';
+
+    // Programmatically click the link to trigger the download
+    link.click();
+  };
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -25,7 +41,7 @@ const Dashboard = () => {
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
-          <Button
+          <Button onClick={handleDownload}
             sx={{
               backgroundColor: colors.blueAccent[700],
               color: colors.grey[100],

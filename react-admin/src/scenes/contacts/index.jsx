@@ -37,7 +37,7 @@ const Contacts = () => {
     },
     {
       field: "address",
-      headerName: "Address",
+      headerName: "Company Name",
       flex: 1,
     },
     {

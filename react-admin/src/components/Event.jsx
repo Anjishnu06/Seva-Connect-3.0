@@ -22,10 +22,9 @@ function Event() {
               <h4>JUNE</h4>
             </div>
             <div className='desc'>
-              <p>Event Description goes here</p>
+              <p style={{fontSize:23}}>Sustainable Food Market or Fair</p>
               <br />
               <p>8AM-PM</p>
-              <p>Smart India Hackethon</p>
             </div>
           </div>
           <div className='boxs'>
@@ -35,10 +34,9 @@ function Event() {
               <h4>DECEMBER</h4>
             </div>
             <div className='desc'>
-              <p>Event Description goes here</p>
+              <p style={{fontSize:23}}> Sustainability Conference or Workshop.</p>
               <br />
               <p>8AM-PM</p>
-              <p>Smart India Hackethon</p>
             </div>
           </div>
           <div className='boxs'>
@@ -48,10 +46,9 @@ function Event() {
               <h4>JANUARY</h4>
             </div>
             <div className='desc'>
-              <p>Event Description goes here</p>
+              <p style={{fontSize:23}}>Volunteer for a Local Environmental Cleanup</p>
               <br />
               <p>8AM-PM</p>
-              <p>Smart India Hackethon</p>
             </div>
           </div>
         </div>

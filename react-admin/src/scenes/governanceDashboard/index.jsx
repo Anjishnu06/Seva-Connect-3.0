@@ -15,6 +15,22 @@ import { Link } from 'react-router-dom';
 import "./dashboard.css";
 
 const GovernanceDashboard = () => {
+
+  const handleDownload = () => {
+    // Path to the CSV file
+    const csvFilePath = '/Users/anjishnukumar/Desktop/archive/ESGData.csv';
+
+    // Create a temporary link element
+    const link = document.createElement('a');
+
+    // Set attributes for the link element
+    link.href = csvFilePath;
+    link.download = 'data.csv';
+
+    // Programmatically click the link to trigger the download
+    link.click();
+  };
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -24,7 +40,7 @@ const GovernanceDashboard = () => {
         <Header title="G-GOVERNANCE" subtitle="Empowering Higher Institutions to Effectively Navigate through the other pillars of ESG Monitoring System" />
 
         <Box>
-          <Button
+          <Button onClick={handleDownload}
             sx={{
               backgroundColor: colors.blueAccent[700],
               color: colors.grey[100],

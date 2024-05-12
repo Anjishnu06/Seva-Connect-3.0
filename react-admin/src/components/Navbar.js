@@ -3,6 +3,7 @@ import styled from "styled-components";
 import style from "./Navbar.css";
 import img from './handss.png';
 import { Link,useNavigate } from 'react-router-dom';
+import Discover from './Discover';
 
 const Navbar = () => {
     const navigate=useNavigate();
@@ -11,11 +12,19 @@ const Navbar = () => {
       navigate('/login');
     }
 
+    const handleClick1=()=>{
+      navigate('/home');
+    }
+
+    const visitDiscover=()=>{
+      navigate('/discover');
+    }
+
   return (
     <>
       <Nav className='main-nav'>
         <div className="nav-logo">
-          <h3>CodeQuest</h3>
+          <h3>SEVA-Connect</h3>
         </div>
         <Div className="nav-main">
           <div className="about">
@@ -29,7 +38,10 @@ const Navbar = () => {
           </div>
         </Div>
         <div className='buttons'>
-          <button onClick={handleClick} className='btn' id="btn-2">Log In/sign Up</button>
+          <button onClick={handleClick} className='btn' id="btn-2">Log In/Sign In</button>
+        </div>
+        <div className='buttons'>
+          <button onClick={handleClick1} className='btn' id="btn-2">Ongoing Projects</button>
         </div>
       </Nav>
       <Main className="main-page">
@@ -44,7 +56,9 @@ const Navbar = () => {
           <div className='head-main'>
             <p>Our ESG Dashboard revalutionizes higer education by <br /> harmonizing data-driven insights with visionary action.<br/> Unlock the Power of Sustainablity.Join us in shaping a <br />greener, more socially conscious tomorrow</p>
           </div>
-          <button className='btn' id='dash-btn'>Learn More</button>
+          <button className='btn' id='dash-btn' onClick={visitDiscover}>
+            Discover More
+          </button>
         </div>
         <Wrap className='box-2'>
         </Wrap>

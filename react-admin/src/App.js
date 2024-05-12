@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
@@ -27,16 +27,24 @@ import jwtDecode from "jwt-decode";
 import Apple from "./Apple";
 import GovernanceDashboard from "./scenes/governanceDashboard";
 import Weather from "./components/Weather";
+import Discover from "./components/Discover";
+import LoginUser from "./components/auth/login/index";
+import RegisterUser from "./components/auth/register/index";
+import Home from "./components/home/index";
+import Header from "./components/Header";
+import { useRoutes } from "react-router-dom";
+import Project1 from "./components/Project1";
+import Project2 from "./components/Project2";
 
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
-  const [username, setUsername] = useState('');
-  
-  const user = localStorage.getItem('token');
+  const [username, setUsername] = useState("");
+
+  const user = localStorage.getItem("token");
 
   console.log(user);
-  
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
@@ -83,7 +91,13 @@ function App() {
                   <Route path="/" element={<Navigate to="/landing" />} />
                   <Route path="/signup" exact element={<Signup />} />
                   <Route path="/login" exact element={<Login />} />
-                  <Route path="/landing" element={<Apple/>}/>
+                  <Route path="/landing" element={<Apple />} />
+                  <Route path="/discover" element={<Discover />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/home/project1" element={<Project1 />} />
+                  <Route path="/home/project2" element={<Project2 />} />
+                  <Route path="/firebase/login" element={<LoginUser/>}/>
+
                 </>
               )}
             </Routes>
