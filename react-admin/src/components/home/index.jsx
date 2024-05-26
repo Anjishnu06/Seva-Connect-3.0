@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -50,6 +50,24 @@ const Home = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    script.onload = () => {
+      if (window.jotformEmbedHandler) {
+        window.jotformEmbedHandler(
+          "iframe[id='JotFormIFrame-241445155360047']",
+          "https://form.jotform.com/"
+        );
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -81,17 +99,16 @@ const Home = () => {
     setActiveStep(step);
   };
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
-  const handleSubmit = ()=>{
-    navigate('/home/project1');
-  }
+  const handleSubmit = () => {
+    navigate("/home/project1");
+  };
 
-  const handleSubmit1 = ()=>{
-    navigate('/home/project2');
-  }
+  const handleSubmit1 = () => {
+    navigate("/home/project2");
+  };
 
-  
   return (
     <div>
       <AppBar position="static">
@@ -270,15 +287,20 @@ const Home = () => {
       </div>
       <div style={{ marginTop: 10, marginLeft: 37 }}>
         <Typography variant="h2">
-          <span>Ongoing Social Impact Projects <ArrowForwardIcon fontSize="medium" /> <span>
-
-          <Link to="https://recommendation-system-hjal.onrender.com/" target="_blank">
-          <Button size="large" variant="outlined" color="success">
-                AI RECOMMENDATION ✨
-              </Button> 
-            </Link>
+          <span>
+            Ongoing Social Impact Projects{" "}
+            <ArrowForwardIcon fontSize="medium" />{" "}
+            <span>
+              <Link
+                to="https://recommendation-system-hjal.onrender.com/"
+                target="_blank"
+              >
+                <Button size="large" variant="outlined" color="success">
+                  AI RECOMMENDATION ✨
+                </Button>
+              </Link>
             </span>
-            </span>
+          </span>
         </Typography>
       </div>
       <div
@@ -347,6 +369,27 @@ const Home = () => {
               </Button>
             </CardActions>
           </Card>
+        </div>
+
+        <div>
+          `
+          <iframe
+            id="JotFormIFrame-241445155360047"
+            title="Form"
+            onLoad={() => window.parent.scrollTo(0, 0)}
+            allowTransparency="true"
+            allow="geolocation; microphone; camera; fullscreen"
+            src="https://form.jotform.com/241445155360047"
+            frameBorder="0"
+            style={{
+              minWidth: "100%",
+              maxWidth: "100%",
+              height: "539px",
+              border: "none",
+            }}
+            scrolling="no"
+          ></iframe>
+          `
         </div>
 
         <div style={{ marginLeft: 15 }}>

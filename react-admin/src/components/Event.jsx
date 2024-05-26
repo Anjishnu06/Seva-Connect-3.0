@@ -10,7 +10,6 @@ function Event() {
           <h1>Upcoming Events</h1>
         </div>
         <div className='side'>
-          <h5>View More</h5>
         </div>
       </div>
       <div className='Event-main'>

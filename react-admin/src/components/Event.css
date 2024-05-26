@@ -7,7 +7,10 @@
 }
 .Event-head{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+.head{
+  color:white;
 }
 .side{
   display: flex;
