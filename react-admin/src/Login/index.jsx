@@ -13,6 +13,7 @@ const Login = () => {
     setData({ ...data, [input.name]: input.value });
   };
 
+<<<<<<< HEAD
   const validateToken = (token) => {
     try {
       const decodedToken = jwtDecode(token);
@@ -26,6 +27,26 @@ const Login = () => {
       return false;
     }
   };
+=======
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const url = "https://seva-connect-app-1.onrender.com/api/auth";
+			const { data: res } = await axios.post(url, data);
+			localStorage.setItem("token", res.data);
+			console.log(res.data);
+			window.location = "/";
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
+>>>>>>> cff9830bc2374a0419769f5e4823ab9ddfc8c1c5
 
   const handleSubmit = async (e) => {
     e.preventDefault();
