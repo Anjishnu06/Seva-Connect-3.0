@@ -13,7 +13,7 @@ const Login = () => {
     setData({ ...data, [input.name]: input.value });
   };
 
-<<<<<<< HEAD
+
   const validateToken = (token) => {
     try {
       const decodedToken = jwtDecode(token);
@@ -27,7 +27,7 @@ const Login = () => {
       return false;
     }
   };
-=======
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
@@ -46,7 +46,7 @@ const Login = () => {
 			}
 		}
 	};
->>>>>>> cff9830bc2374a0419769f5e4823ab9ddfc8c1c5
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
