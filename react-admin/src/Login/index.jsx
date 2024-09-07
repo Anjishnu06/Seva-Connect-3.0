@@ -81,6 +81,10 @@ const Login = () => {
             <button type="submit" className={styles.green_btn}>
               Sign In
             </button>
+            <div>
+              Sample Login Email:123@gmail.com
+              Sample Login Password:Abcd1234$
+            </div>
           </form>
         </div>
         <div className={styles.right}>
