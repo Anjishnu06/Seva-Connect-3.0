@@ -82,8 +82,13 @@ const Login = () => {
               Sign In
             </button>
             <div>
-              Sample Login Email:123@gmail.com
-              Sample Login Password:Abcd1234$
+              <p style={{ color: "red" }}>
+                Sample Login Email:123@gmail.com
+              </p>
+              <br/>
+              <p style={{ color: "red" }}>
+                Sample Login Password:Abcd1234$
+              </p>
             </div>
           </form>
         </div>
